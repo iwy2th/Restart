@@ -13,6 +13,9 @@ struct OnBoardingView: View {
   @State private var buttonWidth: Double = UIScreen.main.bounds.width - 80
   @State private var buttonOffset: CGFloat = 0
   @State private var isAnimating: Bool = false
+  @State private var imageOffset: CGSize = .zero
+  @State private var indicatorOpacity: Double = 1.0
+  @State private var textTitle: String = "Share."
   // MARK: - BODY
   var body: some View {
     ZStack {
@@ -23,10 +26,13 @@ struct OnBoardingView: View {
         // MARK: - HEADER
         Spacer()
         VStack(spacing:0){
-          Text("Share.")
+          Text(textTitle)
             .font(.system(size: 60))
             .fontWeight(.heavy)
             .foregroundColor(.white)
+            .id(textTitle)
+            .transition(.opacity)
+
           Text("""
           It's not how much we give but
           how much love we put into giving
@@ -44,12 +50,46 @@ struct OnBoardingView: View {
         // MARK: - CENTER
         ZStack {
           CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2)
+            .offset(x: imageOffset.width * -1)
+            .blur(radius: abs(imageOffset.width / 5))
+            .animation(.easeOut(duration: 1), value: imageOffset)
           Image("character-1")
             .resizable()
             .scaledToFit()
             .opacity(isAnimating ? 1 : 0)
             .animation(.easeOut(duration: 0.5), value: isAnimating)
+            .offset(x: imageOffset.width * 1.2)
+            .rotationEffect(.degrees(Double(imageOffset.width / 20)))
+            .gesture(
+              DragGesture()
+                .onChanged({ gesture in
+                  if abs(imageOffset.width) <= 150 {
+                    imageOffset = gesture.translation
+                    withAnimation(.linear(duration: 0.25)) {
+                      indicatorOpacity = 0
+                      textTitle = "Gift."
+                    }
+                  }
+                })
+                .onEnded({ _ in
+                  imageOffset = .zero
+                  withAnimation(.linear(duration: 0.25)) {
+                    indicatorOpacity = 1
+                    textTitle = "Share."
+                  }
+                })
+            ) //: GESTURE
+            .animation(.easeOut(duration: 1), value: imageOffset)
         }//: CENTER
+        .overlay(Image(systemName: "arrow.left.and.right.circle")
+          .font(.system(size: 44, weight: .ultraLight))
+          .foregroundColor(.white)
+          .offset(y: 20)
+          .opacity(isAnimating ? 1 : 0)
+          .animation(.easeOut(duration: 2).delay(2), value: isAnimating)
+          .opacity(indicatorOpacity)
+                 , alignment: .bottom)
+
         Spacer()
         // MARK: - FOOTER
         ZStack{
