@@ -6,7 +6,7 @@
 </div>
 
 <div align="center">
-  <video src="https://github.com/iwy2th/Restart/assets/92966362/2790ef58-d399-46e8-930e-1f21c0831065" alt="Video" width="200" controls>
+  <video src="[https://github.com/iwy2th/Restart/assets/92966362/2790ef58-d399-46e8-930e-1f21c0831065](https://github.com/iwy2th/Restart/assets/92966362/8fc8f5aa-fee5-463c-89ce-0971c2650e5c)" alt="Video" width="200" controls>
     Your browser does not support the video tag.
   </video>
 </div>
