@@ -16,6 +16,7 @@
 		72A8022E2A272B500083EBCD /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8022D2A272B4F0083EBCD /* OnBoardingView.swift */; };
 		72A802302A272B580083EBCD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8022F2A272B580083EBCD /* HomeView.swift */; };
 		72A802322A2748A10083EBCD /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A802312A2748A10083EBCD /* CircleGroupView.swift */; };
+		72A8A0932A290AA1006600B9 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8A0922A290AA1006600B9 /* AudioPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		72A8022D2A272B4F0083EBCD /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
 		72A8022F2A272B580083EBCD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		72A802312A2748A10083EBCD /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
+		72A8A0922A290AA1006600B9 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +65,11 @@
 			isa = PBXGroup;
 			children = (
 				72A8022C2A272AB90083EBCD /* Info.plist */,
-				72A8022B2A27295E0083EBCD /* Views */,
-				72A8022A2A2729430083EBCD /* Utilities */,
 				72A802162A27265F0083EBCD /* RestartApp.swift */,
 				72A802292A27291F0083EBCD /* Screens */,
 				72A8021A2A2726600083EBCD /* Assets.xcassets */,
+				72A8022B2A27295E0083EBCD /* Views */,
+				72A8022A2A2729430083EBCD /* Utilities */,
 				72A802282A2727A20083EBCD /* sounds */,
 				72A8021C2A2726600083EBCD /* Preview Content */,
 			);
@@ -104,6 +106,7 @@
 		72A8022A2A2729430083EBCD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				72A8A0922A290AA1006600B9 /* AudioPlayer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				72A802302A272B580083EBCD /* HomeView.swift in Sources */,
 				72A802192A27265F0083EBCD /* ContentView.swift in Sources */,
 				72A802172A27265F0083EBCD /* RestartApp.swift in Sources */,
+				72A8A0932A290AA1006600B9 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
